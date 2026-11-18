@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "pstack",
+  "version": "0.15.43-codex.1",
+  "description": "pstack engineering workflows for Codex: deliberate implementation, independent review, and verified results.",
+  "author": {
+    "name": "Lauren Tan"
+  },
+  "homepage": "https://github.com/outdothebest/pstack",
+  "repository": "https://github.com/outdothebest/pstack",
+  "license": "MIT",
+  "keywords": [
+    "pstack",
+    "poteto-mode",
+    "workflow",
+    "principles",
+    "agent-style",
+    "subagents",
+    "unslop",
+    "codex"
+  ]
+}

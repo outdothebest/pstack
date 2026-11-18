@@ -1,3 +1,18 @@
+# pstack for Codex
+
+This fork of `cursor/plugins` provides a Codex adaptation of pstack while preserving upstream history and the other plugins. Install it with:
+
+```sh
+codex plugin marketplace add outdothebest/pstack
+codex plugin add pstack@outdothebest-pstack
+```
+
+Start a new chat and use `$pstack:setup-pstack` or `$pstack:poteto-mode`. See the [Codex package and workflow catalog](harness/pstack-codex/README.md) for setup, compatibility limits, attribution, and maintenance. Maintained Codex-specific source lives in [codex/](codex/); the installable package is generated with `node scripts/generate-pstack-codex.mjs`.
+
+The original marketplace README follows.
+
+---
+
 # Cursor plugins
 
 Official Cursor plugins for popular developer tools, frameworks, and SaaS products. Each plugin is a standalone directory at the repository root with its own `.cursor-plugin/plugin.json` manifest.

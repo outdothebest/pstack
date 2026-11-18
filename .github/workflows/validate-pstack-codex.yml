@@ -1,0 +1,34 @@
+name: Validate pstack for Codex
+
+on:
+  push:
+    paths:
+      - ".agents/plugins/marketplace.json"
+      - "codex/**"
+      - "pstack/**"
+      - "harness/pstack-codex/**"
+      - "scripts/generate-pstack-codex.mjs"
+      - "scripts/test/pstack-codex.test.mjs"
+      - ".github/workflows/validate-pstack-codex.yml"
+  pull_request:
+    paths:
+      - ".agents/plugins/marketplace.json"
+      - "codex/**"
+      - "pstack/**"
+      - "harness/pstack-codex/**"
+      - "scripts/generate-pstack-codex.mjs"
+      - "scripts/test/pstack-codex.test.mjs"
+      - ".github/workflows/validate-pstack-codex.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Codex for package discovery checks
+        run: npm install --global @openai/codex@0.169.0
+      - run: node scripts/generate-pstack-codex.mjs --check
+      - run: node --test scripts/test/pstack-codex.test.mjs
